@@ -64,7 +64,6 @@ add_executable(${CMAKE_PROJECT_NAME})
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/CubeMX/cmake/stm32cubemx)
 add_subdirectory(PYRo)
 
-
 if (ROBOT_ID EQUAL HERO_ID)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/hero)
     target_link_libraries(${CMAKE_PROJECT_NAME}
@@ -73,10 +72,50 @@ elseif (ROBOT_ID EQUAL SUB_HERO_ID)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/sub_hero)
     target_link_libraries(${CMAKE_PROJECT_NAME}
             Sub_Hero)
+elseif (ROBOT_ID EQUAL INFANTRY1_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/infantry1)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Infantry1)
 elseif (ROBOT_ID EQUAL INFANTRY2_ID)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/infantry2)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Infantry2)
 elseif (ROBOT_ID EQUAL SENTRY_ID)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/sentry)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Sentry)
+elseif (ROBOT_ID EQUAL UAV_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/uav)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            UAV)
+elseif (ROBOT_ID EQUAL DARTS_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/darts)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Darts)
+elseif (ROBOT_ID EQUAL RADAR_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/radar)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Radar)
+elseif (ROBOT_ID EQUAL SUB_HERO_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/sub_hero)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Sub_Hero)
+elseif (ROBOT_ID EQUAL SUB_ENGINEER_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/sub_engineer)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Sub_Engineer)
+elseif (ROBOT_ID EQUAL SUB_INFANTRY_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/sub_infantry)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Sub_Infantry)
+elseif (ROBOT_ID EQUAL SUB_SENTRY_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/sub_sentry)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Sub_Sentry)
+elseif (ROBOT_ID EQUAL TEST_ROBOT_ID)
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/robot/test_robot)
+    target_link_libraries(${CMAKE_PROJECT_NAME}
+            Test_Robot)
 endif ()
 
 
