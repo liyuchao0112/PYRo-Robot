@@ -7,10 +7,10 @@ extern "C" {
     void pyro_init_thread(void *argument) {
         dwt_drv_t::init(480);
 
-#ifdef TEST_USB_CDC
-        usb_cdc_drv_t::instance().start();
-        usb_cdc_drv_t::instance().enable_rx();
-#endif
+        usb_cdc_drv_t::instance().init("PYRO-UNK-DEV");
+        usb_cdc_drv_t::instance().enable_rx(0);
+        usb_cdc_drv_t::instance().enable_rx(1);
+
 
         vTaskDelete(nullptr);
     }
